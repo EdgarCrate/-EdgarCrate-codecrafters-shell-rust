@@ -14,8 +14,8 @@ fn main() {
 
         if &user_input == "exit" {
             running = false;
+        } else {
+            println!("{}: command not found", user_input.trim());
         }
-
-        println!("{}: command not found", user_input.trim());
     }
 }
