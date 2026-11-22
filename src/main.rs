@@ -7,7 +7,7 @@ fn main() {
         io::stdout().flush().unwrap();
         let mut user_input = String::new();
         // when pressing enter the readline add "\n" to the string, thus we need to remove it
-        let user_input = stdin().read_line(&mut user_input).unwrap().to_string();
+        stdin().read_line(&mut user_input).unwrap();
         println!("{}: command not found", user_input.trim());
     }
 }
