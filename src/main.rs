@@ -11,9 +11,11 @@ fn main() {
             .read_line(&mut user_input)
             .expect("An error ocurred while reading the input");
 
-        match user_input.trim() {
+        let command = user_input.trim();
+
+        match command {
             "exit" => break,
-            _ => println!("{}: command not found", user_input),
+            _ => println!("{}: command not found", command),
         };
     }
 }
