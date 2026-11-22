@@ -11,7 +11,7 @@ fn main() {
             .read_line(&mut user_input)
             .expect("An error ocurred while reading the input");
 
-        if &user_input == "exit" {
+        if &user_input.to_lowercase() == "exit" {
             break;
         }
 
