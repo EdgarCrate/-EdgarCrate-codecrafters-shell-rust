@@ -11,10 +11,9 @@ fn main() {
             .read_line(&mut user_input)
             .expect("An error ocurred while reading the input");
 
-        if &user_input == "exit" {
-            break;
-        } else {
-            println!("{}: command not found", user_input.trim());
-        }
+        match user_input.as_str() {
+            "exit" => break,
+            _ => println!("{}: command not found", user_input.trim()),
+        };
     }
 }
