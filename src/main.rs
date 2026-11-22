@@ -1,8 +1,7 @@
 use std::io::{self, Write, stdin};
 
 fn main() {
-    let mut running = true;
-    while running {
+    loop {
         print!("$ ");
         // we flush the buffer after the print because if not, the next print will be in the same line
         io::stdout().flush().unwrap();
@@ -13,7 +12,7 @@ fn main() {
             .expect("An error ocurred while reading the input");
 
         if &user_input == "exit" {
-            running = false;
+            break;
         } else {
             println!("{}: command not found", user_input.trim());
         }
