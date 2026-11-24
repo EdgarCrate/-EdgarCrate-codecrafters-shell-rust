@@ -11,11 +11,21 @@ fn main() {
             .read_line(&mut user_input)
             .expect("An error ocurred while reading the input");
 
-        let command = user_input.trim();
-
-        match command {
-            "exit" => break,
-            _ => println!("{}: command not found", command),
-        };
+        let user_input = user_input.trim();
+        let mut input_parts = user_input.split_whitespace();
+        let command = input_parts.next();
+        if let Some(c) = command {
+            let args: Vec<&str> = input_parts.collect();
+            let msg = args.join(" ");
+            match c {
+                "exit" => break,
+                "echo" => {
+                    println!("{}", msg);
+                }
+                _ => println!("{}: command not found", c),
+            };
+        } else {
+            continue;
+        }
     }
 }
